@@ -1,9 +1,10 @@
-import { Button, Flex, Stack } from '@chakra-ui/react'
+import { Box, Button, Flex, Stack } from '@chakra-ui/react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { Input } from '../components/Form/Input'
+import { Logo } from '../components/Header/Logo';
 
 type SignInFormData = {
   email: string 
@@ -31,7 +32,13 @@ export default function SignIn() {
     h="100vh" 
     align="center" 
     justify="center"
+    direction="column"
     > 
+
+      <Box display="flex" align="center" mb="8">
+        <Logo />
+      </Box>
+
       <Flex
         as="form"
         width="100%"

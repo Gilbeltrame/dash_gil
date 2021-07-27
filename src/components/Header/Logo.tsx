@@ -8,7 +8,7 @@ export function Logo(){
       letterSpacing="tight"
       w="64"
     >
-      dashgo
+      dash_gil
       <Text color="pink.500" as="span" ml="1" >
         .
       </Text>
