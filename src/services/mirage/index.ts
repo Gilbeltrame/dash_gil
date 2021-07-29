@@ -32,7 +32,7 @@ export function makeServer(){
     },
 
     seeds(server){
-      server.createList('user', 200) //geramos os dados da factory "user" no fake servidor, um total de 200 users
+      server.createList('user',207) //geramos os dados da factory "user" no fake servidor, um total de 207 users
     },
 
     routes(){
@@ -40,9 +40,9 @@ export function makeServer(){
       this.timing = 750; // bom dar um timing em ms pra testar loaders, spinners etc na tela
 
       this.get('/users', function(schema, request){
-        const { page = 1, per_page=10 } = request.queryParams
+        const { page = 1, per_page= 10 } = request.queryParams //troquei {data} por {page , per_page}
 
-        const total = schema.all('user').length
+        const total = schema.all('user').length //total de items ou usuários
 
         const pageStart = (Number(page) - 1) * Number(per_page);
         const pageEnd = pageStart + Number(per_page)
@@ -54,11 +54,13 @@ export function makeServer(){
           { 'x-total-count' : String(total) },
           {users}
         )
-        
       });
+
+      this.get('/users/:id'); // rota para pre-fetch dos dados do usuário
+
       this.post('/users');
 
-      this.namespace = ''; //por causa do next.js temos que usar
+      this.namespace = ''; //por causa do next.js temos que usar para limpar o /api
       this.passthrough(); //fazer com que todas chamadas com a rota passem pelo mirage e se não forem detectadas, passem adiante sem erro.
     }
   })

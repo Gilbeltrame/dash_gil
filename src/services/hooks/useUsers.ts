@@ -41,7 +41,7 @@ export async function getUsers(page: number): Promise<GetUsersResponse>{
 
 export function useUsers(page: number){
   return useQuery(['users', page] , () => getUsers(page), {
-    staleTime: 1000 * 5  //tempo de obsolecência dos dados em milisegundos
+    staleTime: 1000 * 60 * 10  //tempo de obsolecência dos dados em milisegundos
   })
      
 }
