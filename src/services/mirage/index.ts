@@ -1,4 +1,4 @@
-import { createServer, Factory, Model, Response } from 'miragejs'
+import { ActiveModelSerializer, createServer, Factory, Model, Response } from 'miragejs'
 import faker from 'faker'
 
 type User = { //Criando a tipagem da fake data que o servidor vai criar
@@ -9,6 +9,10 @@ type User = { //Criando a tipagem da fake data que o servidor vai criar
 
 export function makeServer(){
   const server = createServer({
+
+    serializers:{
+      application: ActiveModelSerializer, //Modelo para enviar e receber os relacionamentos de dados em uma requisição só
+    },
 
     models:{
       user: Model.extend<Partial<User>>({ //O partial serve para dizer que a info nem sempre vai ter todos os campos do tipo User

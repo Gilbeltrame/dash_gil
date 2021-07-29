@@ -14,7 +14,7 @@ import { queryClient } from "../../services/queryClient.ts";
 
 export default function UserList(){
   const [currentPage, setCurrentPage] = useState(1)
-  const { data , isLoading, isFetching, error } = useUsers(currentPage); 
+  const { data , isLoading, isFetching, error } = useUsers(currentPage);
 
   const isWideVersion = useBreakpointValue({
     base: false,
