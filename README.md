@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project + Chakra UI.
+This is a [Next.js](https://nextjs.org/) project + Chakra UI, created by Rocketseat for learning.
 
 ## Getting Started
 
