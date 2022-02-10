@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project + Chakra UI for improve my skils.
+This is a [Next.js](https://nextjs.org/) project + Chakra UI for improving my skills.
 
 ## Getting Started
 
